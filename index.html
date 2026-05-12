@@ -36,19 +36,32 @@
     /* ── Mobile ─────────────────────────────────────── */
     @media screen and (max-width: 600px) {
       .email-wrapper  { width: 100% !important; max-width: 100% !important; }
-      .hero-headline  { font-size: 32px !important; line-height: 40px !important; }
+      .hero-headline, h1.hero-headline { font-size: 28px !important; line-height: 36px !important; }
       .hero-img       { width: 100% !important; height: auto !important; }
       .two-col-left,
       .two-col-right  { display: block !important; width: 100% !important; }
       .two-col-left   { padding-right: 0 !important; }
       .two-col-right  { padding-left: 0 !important; }
-      .mob-first      { padding-bottom: 16px !important; }
-      .article-img    { width: 100% !important; height: auto !important; }
+      .mob-first      { padding-bottom: 0 !important; }
+      .article-img    { display: block !important; max-height: none !important; overflow: visible !important; width: 100% !important; height: auto !important; }
       .btn-cta        { width: 90% !important; }
       .mob-pad        { padding-left: 16px !important; padding-right: 16px !important; }
       .mob-full       { width: 100% !important; }
       .mob-hide       { display: none !important; }
-      .mob-stack      { display: block !important; width: 100% !important; }
+      .mob-gap        { display: none !important; width: 0 !important; min-width: 0 !important; padding: 0 !important; }
+      .mob-stack      { display: block !important; width: 100% !important; max-height: none !important; overflow: visible !important; }
+      .article-title  { font-size: 28px !important; }
+      .article-body   { font-size: 16px !important; line-height: 26px !important; }
+      .body-text      { font-size: 16px !important; line-height: 28px !important; }
+      .bold-text      { font-size: 16px !important; line-height: 28px !important; }
+      .mob-text-gap   { padding-top: 24px !important; }
+    }
+
+    /* ── Mobile 347px — footer stacks ───────────────── */
+    @media screen and (max-width: 347px) {
+      .footer-copy-td    { display: block !important; width: 100% !important; text-align: center !important; }
+      .footer-social-td  { display: block !important; width: 100% !important; text-align: center !important; padding-top: 16px !important; }
+      .social-icons-table { margin: 0 auto !important; }
     }
   </style>
 </head>
@@ -147,22 +160,28 @@
 
           <!-- ── ARTICLES SECTION — white bg, 104px top gap ── -->
           <tr>
-            <td style="padding:104px 24px 0; background-color:#ffffff;" class="content-bg mob-pad">
+            <td style="padding:104px 16px 0; background-color:#ffffff;" class="content-bg mob-pad">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <!-- Image left: 272×338px -->
-                  <td class="two-col-left mob-first" width="272" valign="top" style="width:272px; padding-right:24px;">
-                    <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7c65604992735e22ce16_article-image-ss-email.png" width="272" height="338" alt="Overloaded IT team illustration" class="article-img mob-stack" style="display:block; width:272px; height:338px; object-fit:cover; border:0; border-radius:8px;">
+                  <!-- Image left: full-height background, no padding so border-radius clips all 4 corners -->
+                  <td class="two-col-left mob-first" width="328" valign="top"
+                      style="width:328px; border-radius:8px; overflow:hidden;
+                             background-image:url('https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7c65604992735e22ce16_article-image-ss-email.png');
+                             background-size:cover; background-position:center; background-color:#e8e8e8;">
+                    <!--[if mso]><img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7c65604992735e22ce16_article-image-ss-email.png" width="328" height="500" alt="Overloaded IT team illustration" style="display:block; border:0;"><![endif]-->
+                    <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7c65604992735e22ce16_article-image-ss-email.png" width="328" alt="Overloaded IT team illustration" class="article-img mob-stack" style="display:none; max-height:0; overflow:hidden; mso-hide:all; width:100%; height:auto; border:0; border-radius:8px;">
                   </td>
-                  <!-- Text right: 336px -->
-                  <td class="two-col-right" width="336" valign="top" style="width:336px;">
-                    <p class="article-title" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:20px; font-weight:600; color:#000000; line-height:normal;">
+                  <!-- Gap: 40px spacer, hidden on mobile -->
+                  <td class="mob-gap" width="40" style="width:40px; min-width:40px;"></td>
+                  <!-- Text right: 280px -->
+                  <td class="two-col-right mob-text-gap" width="280" valign="top" style="width:280px;">
+                    <p class="article-title" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:36px; font-weight:600; color:#000000; line-height:normal;">
                       The Smarter Way to Handle Overloaded IT Teams
                     </p>
-                    <p class="body-text" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
+                    <p class="body-text article-body" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
                       Feeling stuck because your IT team is stretched thin? Or maybe your legacy systems just keep slowing everything down. Either way, it's frustrating.
                     </p>
-                    <p class="body-text" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
+                    <p class="body-text article-body" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
                       The reality is, trying to do everything in-house isn't always the answer. Outsourcing gives you access to the skills you need—exactly when you need them—without burning out your team.
                     </p>
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -183,29 +202,35 @@
 
           <!-- ── Section divider — 80px below article 1 ── -->
           <tr>
-            <td align="center" style="padding:80px 25px 0; background-color:#ffffff;" class="content-bg mob-pad">
+            <td align="center" style="padding:80px 16px 0; background-color:#ffffff;" class="content-bg mob-pad">
               <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7d6211f0be990738fa1b_html-body-divider.png" width="630" height="1" alt="" style="display:block; width:630px; max-width:100%; height:1px; border:0; margin:0 auto;">
             </td>
           </tr>
 
           <!-- ── Article 2 — 80px below divider ── -->
           <tr>
-            <td style="padding:80px 24px 120px; background-color:#ffffff;" class="content-bg mob-pad">
+            <td style="padding:80px 16px 120px; background-color:#ffffff;" class="content-bg mob-pad">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="direction:rtl;">
                 <tr>
                   <!-- Image: HTML-first = visually RIGHT on desktop (rtl); top on mobile -->
-                  <td class="two-col-right mob-first" width="272" valign="top" style="direction:ltr; width:272px; padding-left:24px;">
-                    <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7cbc249b5c83298377e8_article2-image-ss-email.png" width="272" height="290" alt="UX designer illustration" class="article-img mob-stack" style="display:block; width:272px; height:290px; object-fit:cover; border:0; border-radius:8px;">
+                  <td class="two-col-right mob-first" width="328" valign="top"
+                      style="direction:ltr; width:328px; border-radius:8px; overflow:hidden;
+                             background-image:url('https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7cbc249b5c83298377e8_article2-image-ss-email.png');
+                             background-size:cover; background-position:center; background-color:#add8e6;">
+                    <!--[if mso]><img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7cbc249b5c83298377e8_article2-image-ss-email.png" width="328" height="400" alt="UX designer illustration" style="display:block; border:0;"><![endif]-->
+                    <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/69fd7cbc249b5c83298377e8_article2-image-ss-email.png" width="328" alt="UX designer illustration" class="article-img mob-stack" style="display:none; max-height:0; overflow:hidden; mso-hide:all; width:100%; height:auto; border:0; border-radius:8px;">
                   </td>
+                  <!-- Gap: 40px spacer, hidden on mobile -->
+                  <td class="mob-gap" width="40" style="direction:ltr; width:40px; min-width:40px;"></td>
                   <!-- Text: HTML-second = visually LEFT on desktop (rtl) -->
-                  <td class="two-col-left" width="336" valign="top" style="direction:ltr; width:336px;">
-                    <p class="article-title" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:20px; font-weight:600; color:#000000; line-height:normal;">
-                      The Hidden Factor<br>Behind Great UX
+                  <td class="two-col-left mob-text-gap" width="280" valign="top" style="direction:ltr; width:280px;">
+                    <p class="article-title" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:36px; font-weight:600; color:#000000; line-height:normal;">
+                      The Hidden Factor Behind Great UX
                     </p>
-                    <p class="body-text" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
+                    <p class="body-text article-body" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
                       UX design is a demanding field, shaped by constantly evolving technology and high creative expectations. Great UX starts with the right designer—but what separates good from exceptional?
                     </p>
-                    <p class="body-text" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
+                    <p class="body-text article-body" style="margin:0 0 24px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:14px; font-weight:400; color:#000000; line-height:24px;">
                       The answer isn't always what you expect.
                     </p>
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -266,13 +291,13 @@
                   <td style="padding-bottom:56px;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td valign="middle">
+                        <td valign="middle" class="footer-copy-td">
                           <p style="margin:0; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:12px; font-weight:400; color:#e5e6e7; line-height:16px; white-space:nowrap;" class="footer-text">
                             Copyright &copy; 2026. All Right Reserved
                           </p>
                         </td>
-                        <td align="right" valign="middle">
-                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                        <td align="right" valign="middle" class="footer-social-td">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="social-icons-table">
                             <tr>
                               <td>
                                 <a href="https://facebook.com/starshotsoftware" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
