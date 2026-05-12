@@ -57,11 +57,9 @@
       .mob-text-gap   { padding-top: 24px !important; }
     }
 
-    /* ── Mobile 347px — footer stacks ───────────────── */
+    /* ── Mobile 347px ────────────────────────────────── */
     @media screen and (max-width: 347px) {
-      .footer-copy-td    { display: block !important; width: 100% !important; text-align: center !important; }
-      .footer-social-td  { display: block !important; width: 100% !important; text-align: center !important; padding-top: 16px !important; }
-      .social-icons-table { margin: 0 auto !important; }
+      /* footer copyright + social are always stacked/centred via HTML, no overrides needed */
     }
   </style>
 </head>
@@ -286,36 +284,34 @@
                   </td>
                 </tr>
 
-                <!-- Copyright + social icons -->
+                <!-- Copyright -->
                 <tr>
-                  <td style="padding-bottom:56px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <td align="center" style="padding-bottom:16px;">
+                    <p style="margin:0; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:12px; font-weight:400; color:#e5e6e7; line-height:16px; text-align:center;" class="footer-text">
+                      Copyright &copy; 2026. All Right Reserved
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Social icons -->
+                <tr>
+                  <td align="center" style="padding-bottom:56px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
                       <tr>
-                        <td valign="middle" class="footer-copy-td">
-                          <p style="margin:0; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:12px; font-weight:400; color:#e5e6e7; line-height:16px; white-space:nowrap;" class="footer-text">
-                            Copyright &copy; 2026. All Right Reserved
-                          </p>
+                        <td>
+                          <a href="https://facebook.com/starshotsoftware" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
+                            <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbba9042c250a51daa54d_sq-fb-icon.png" width="24" height="24" alt="Facebook" style="display:block; width:24px; height:24px; border:0;">
+                          </a>
                         </td>
-                        <td align="right" valign="middle" class="footer-social-td">
-                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="social-icons-table">
-                            <tr>
-                              <td>
-                                <a href="https://facebook.com/starshotsoftware" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
-                                  <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbba9042c250a51daa54d_sq-fb-icon.png" width="24" height="24" alt="Facebook" style="display:block; width:24px; height:24px; border:0;">
-                                </a>
-                              </td>
-                              <td style="padding-left:8px;">
-                                <a href="https://www.linkedin.com/company/starshot-software" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
-                                  <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbbaa3eb2f3359628fda1_sq-linkedin-icon.png" width="24" height="24" alt="LinkedIn" style="display:block; width:24px; height:24px; border:0;">
-                                </a>
-                              </td>
-                              <td style="padding-left:8px;">
-                                <a href="https://www.instagram.com/starshotsoftware/" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
-                                  <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbba9302fddc1f5a50f37_sq-insta-icon.png" width="24" height="24" alt="Instagram" style="display:block; width:24px; height:24px; border:0;">
-                                </a>
-                              </td>
-                            </tr>
-                          </table>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.linkedin.com/company/starshot-software" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
+                            <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbbaa3eb2f3359628fda1_sq-linkedin-icon.png" width="24" height="24" alt="LinkedIn" style="display:block; width:24px; height:24px; border:0;">
+                          </a>
+                        </td>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.instagram.com/starshotsoftware/" style="display:inline-block; font-size:0; line-height:0; background-color:#e5e6e7; border-radius:4px;">
+                            <img src="https://cdn.prod.website-files.com/6213a177105fcc8e6d8e1d59/699dbba9302fddc1f5a50f37_sq-insta-icon.png" width="24" height="24" alt="Instagram" style="display:block; width:24px; height:24px; border:0;">
+                          </a>
                         </td>
                       </tr>
                     </table>
