@@ -49,7 +49,7 @@
       .mob-full       { width: 100% !important; }
       .mob-hide       { display: none !important; }
       .mob-gap        { display: none !important; width: 0 !important; min-width: 0 !important; padding: 0 !important; }
-      .mob-stack      { display: block !important; width: 100% !important; max-height: none !important; overflow: visible !important; }
+      .mob-stack      { display: block !important; width: 100% !important; max-height: 260px !important; object-fit: cover !important; overflow: hidden !important; border-radius: 8px !important; }
       .article-title  { font-size: 28px !important; }
       .article-body   { font-size: 16px !important; line-height: 26px !important; }
       .body-text      { font-size: 16px !important; line-height: 28px !important; }
@@ -57,9 +57,25 @@
       .mob-text-gap   { padding-top: 24px !important; }
     }
 
-    /* ── Mobile 347px ────────────────────────────────── */
+    /* ── Mobile 480px — mid-size phones ─────────────── */
+    @media screen and (max-width: 480px) {
+      .mob-pad        { padding-left: 20px !important; padding-right: 20px !important; }
+      .mob-stack      { max-height: 240px !important; }
+    }
+
+    /* ── Mobile 390px — standard iPhone ─────────────── */
+    @media screen and (max-width: 390px) {
+      .mob-pad        { padding-left: 16px !important; padding-right: 16px !important; }
+      .mob-stack      { max-height: 220px !important; }
+      .hero-headline, h1.hero-headline { font-size: 26px !important; line-height: 34px !important; }
+      .mob-text-gap   { padding-top: 20px !important; }
+    }
+
+    /* ── Mobile 347px — smallest ─────────────────────── */
     @media screen and (max-width: 347px) {
-      .mob-pad { padding-left: 12px !important; padding-right: 12px !important; }
+      .mob-pad        { padding-left: 12px !important; padding-right: 12px !important; }
+      .mob-stack      { max-height: 200px !important; }
+      .hero-headline, h1.hero-headline { font-size: 24px !important; line-height: 32px !important; }
     }
   </style>
 </head>
